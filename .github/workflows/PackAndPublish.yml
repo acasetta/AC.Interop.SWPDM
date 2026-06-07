@@ -1,0 +1,28 @@
+name: PackAndPublish
+on:
+  push:
+    branches:
+      - main
+jobs:
+  pack-and-publish:
+    permissions:
+      id-token: write
+      contents: read
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: nuget/setup-nuget@v3
+      with:
+        nuget-version: '5.x'
+        
+    - name: Pack Solidworks PDM
+      run: nuget pack AC.Interop.SWPDM.nuspec -OutputDirectory ./packages/
+
+    - name: NuGet Login
+      uses: NuGet/login@v1
+      id: login
+      with:
+        user: ${{ secrets.NUGET_USER }}
+      
+    - name: Push package
+      run: nuget push ./packages/*.nupkg --api-key "${{ steps.login.outputs.NUGET_API_KEY }}" --source https://api.nuget.org/v3/index.json
