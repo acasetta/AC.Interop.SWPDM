@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>AC.Interop.SWPDM</id>
-        <version>34.2.1</version>
+        <version>34.4.1</version>
         <title>SOLIDWORKS PDM API Interop</title>
         <authors>Alberto Casetta</authors>
         <owners>acasetta</owners>
@@ -12,7 +12,7 @@
         <readme>docs\readme.md</readme>
         <projectUrl>https://help.solidworks.com/2026/English/api/epdmapi/Welcome-epdmapi.htm</projectUrl>
         <description>SOLIDWORKS PDM API PIAs</description>
-        <releaseNotes>Assemblies released with 2026 SP2.1</releaseNotes>
+        <releaseNotes>Assemblies released with 2026 SP4.1</releaseNotes>
         <copyright>Copyright 2026 Solidworks</copyright>
         <tags>solidworks pdm swpdm interop</tags>
         <repository type="git" url="https://github.com/acasetta/AC.Interop.SWPDM.git" branch="main" />
